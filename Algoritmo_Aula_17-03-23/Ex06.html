@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+    <style>
+        .corinthians {
+            background-color: black;
+            color: white;
+        }
+        .saoPaulo {
+            background-color: black;
+            color: red;
+        }    
+        .palmeiras {
+            background-color: green;
+            color: white;
+        }  
+       .santos {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    Qual grande time (DE SP) você torce? <input type="text" id="meuTime">
+    <button onclick="analise()">Fale sobre esse time</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+    function analise() {
+        if (meuTime.value == 'Corinthians') {
+            exibir.innerHTML = `<p class="corinthians">Salve o corinthians</p>`
+        } else if (meuTime.value == 'Palmeiras') {
+            exibir.innerHTML = `<p class="palmeiras">Salve o alviverde imponente</p>`
+        } else if (meuTime.value == 'Santos') {
+            exibir.innerHTML = `<p class="santos">Agora quem dá a bola é o santos</p>`
+        } else if (meuTime.value == 'São Paulo'){
+            exibir.innerHTML = `<p class="saoPaulo">Salve o Tricolor paulista</p>`
+        }
+}
+</script>
