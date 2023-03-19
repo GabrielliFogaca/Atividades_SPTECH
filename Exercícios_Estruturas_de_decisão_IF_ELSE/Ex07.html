@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>CONTA DE LUZ</h1>
+    Quantidade de kWh (mês)<input id="consumo">
+    <button onclick="calculo()">Calcular conta de luz</button>
+
+    <p id="exibicao"></p>
+
+
+</body>
+</html>
+<script>
+    function calculo() {
+        var kwh = Number(consumo.value)
+        var calculo_consumo = kwh * 0.85
+        var calculo_desconto = 0
+        var valorFinal_desconto = calculo_consumo - calculo_desconto
+        
+
+        if (calculo_consumo < 100) {
+            var calculo_desconto = calculo_consumo * 0.10
+            exibicao.innerHTML = `O valor a ser pago é de R$${valorFinal_desconto} (Já com desconto)`
+
+            } else {
+                exibicao.innerHTML = `O valor a ser pago é de R$${calculo_consumo}`
+
+            }
+
+
+        }
+
+</script>

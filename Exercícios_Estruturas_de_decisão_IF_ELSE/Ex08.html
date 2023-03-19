@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ELEVADOR</h1>
+
+        Quantidade Mulheres: <input id="qtd_mulheres"><br><br>
+        Quantidade Homens: <input id="qtd_homens"><br><br>
+        <button onclick="calculo()">LIGAR</button>
+
+        <div id="exibicao"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calculo() {
+        var fem = Number(qtd_mulheres.value) * 70
+        var masc = Number(qtd_homens.value) * 90
+        var total = fem + masc
+        var capacidade = total - 500
+
+        if (total <= 500) {
+            exibicao.innerHTML = `<p style="color: green"> O elevador vai se mover pois está com ${total} Kg</p>`
+        } else {
+            exibicao.innerHTML = `<p style="color: red"> Alguém precisa descer. Precisa perder ${capacidade}kg para mover o elevador  </p>`
+        }
+    }
+</script>

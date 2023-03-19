@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+<body>
+    Insira frequência: <input id="input_freq"><br>
+    <button onclick="analise()">Analisar frequencia</button><br>
+    
+    
+
+    <div id="exibicao"></div>
+</body>
+</html>
+
+<script>
+    function analise() {
+        var freq = Number(input_freq.value)
+
+        if (freq < 50) {
+            exibicao.innerHTML = `<img src="https://www.pacoteturismobrasil.com.br/wp-content/uploads/2022/09/turismo-nautico-1--250x250.jpg">`
+        } else {
+            exibicao.innerHTML = `<img src="https://blog.prozeducacao.com.br/wp-content/uploads/2022/12/guia-de-acesso-a-central-do-aluno-250x250.jpg">
+`
+
+        }
+    }
+</script>

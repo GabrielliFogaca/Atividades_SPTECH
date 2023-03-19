@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a temperatura do momento? <input id="temperatura">
+    <button onclick="verificar()">Verificar clima</button>
+
+    <div id="exibicao"></div>
+</body>
+</html>
+
+<script> 
+function verificar() {
+    var temp = Number(temperatura.value)
+
+    if (temp < 10 ) {
+        exibicao.innerHTML = `Apropriada p/ conservar alimento. <br> <img src="https://chefnutri.files.wordpress.com/2013/04/beba1.png">`
+    } else {
+        exibicao.innerHTML = `Inapropriada p/ conservar alimento. <br> <img src="https://conteudo.imguol.com.br/c/entretenimento/1a/2018/09/11/pao-estragado-1536706056533_v2_450x450.jpg">`
+    }
+}</script>

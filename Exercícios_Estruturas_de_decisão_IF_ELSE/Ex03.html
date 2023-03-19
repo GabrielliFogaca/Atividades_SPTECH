@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 03</title>
+</head>
+<body>
+    Quantidade de chocolate desejada: <input id="inputQUantidade">
+    <button onclick="calculo()">Compra</button>
+    
+    <div id="exibicao"></div>
+</body>
+</html>
+<script>
+    function calculo() {
+        var qtd = Number(inputQUantidade.value)
+        var preco = 2.50
+
+        if (qtd > 12) {
+            exibicao.innerHTML = (`O valor da sua compra foi de R$${qtd * preco}`)
+        } else {
+            exibicao.innerHTML = (`O valor da sua compra foi de R$${qtd * 3.00}`)
+
+        }
+    }
+</script>
