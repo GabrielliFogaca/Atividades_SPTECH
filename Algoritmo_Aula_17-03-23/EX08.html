@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX08</title>
+</head>
+<body>
+    <h1>CALORIAS DIÁRIAS</h1>
+
+    Quantos pães franceses são ingeridos por dia? <input id="paesF"><br><br>
+    Quantos pacotes de bolacha recheada por dia? <input type="text" id="bolachaR"><br><br>
+    Quantos copos de achocolatado por dia? <input type="text" id="achocolatadoD"><br><br>
+
+    <button onclick="verificar()">Verificar calorias</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        var paes = Number(paesF.value) * 50
+        var bolacha = Number(bolachaR.value) * 80
+        var leite = Number(achocolatadoD.value)
+        var calorias = paes + bolacha + leite
+
+        if (calorias < 200) {
+            exibir.innerHTML = `<p>Parabéns, vai sair em forma da quarentena!</p>`
+        } else if (calorias <= 400) {
+        exibir.innerHTML = `<p>Cuidado, vai ficar mais "fofinho(a)" após quarentena!</p>`
+        } else {
+            exibir.innerHTML = `<p>Bom, acho que muitos não vão te reconhecer após a quarentena</p>`
+        }
+    }
+</script>
