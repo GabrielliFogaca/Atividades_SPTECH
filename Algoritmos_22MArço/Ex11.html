@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+
+    <h1>Cartão Fidelidade</h1>
+    Quantidade de passagem: <input type="text" id="adquirir">
+
+    <button onclick="analisar()">Ver situação</button>
+    
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar () {
+        var passagem = Number(adquirir.value)
+        var unidade = passagem * 4.4
+
+        if (passagem < 8 && passagem >50) {
+            alert(`Quantidade inválida para o fidelidade`)
+            
+        } else if (passagem >= 8 && passagem <= 19) {
+                alert(`Total a pagar R$${unidade * 0.03}`)
+            } else if (passagem >= 20 && passagem <= 49) {
+                alert(`Total a pagar R$${unidade * 0.05}`)
+            } else {
+                alert(`Total a pagar R$${unidade * 0.07}`)
+
+            }
+                        
+    }
+</script>
