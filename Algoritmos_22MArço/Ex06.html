@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+<body>
+
+    <h1> Avaliação do Aluno</h1>
+    Insira sua nota: <input type="text" id="notaAluno">
+    Insira sua frequencia: <input type="text" id="freqAluno">
+    <button onclick="analisar()">Avaliar aluno</button>
+    
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar () {
+        var nota = Number(notaAluno.value)
+        var freq = Number(freqAluno.value)
+
+        if (nota >= 6 && freq >= 75) {
+            alert(`Parabéns! Aprovado!`)
+        } else {
+            alert(`Infelizmente, não foi desta vez`)
+        }
+    }
+</script>
