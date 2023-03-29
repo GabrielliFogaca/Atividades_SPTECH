@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LOJA XPTO</h1>
+    Qual a forma de pagamento (São aceitos: dinheiro, Cartão de débito, Cartão de crédito e boleto)<br><input id="formaPagamento"><br>
+    <button onclick="analise()">Analisar compra</button>
+
+    <div id="exibicao"></div>
+</body>
+</html>
+<script>
+
+    function analise() {
+        var pagamento = formaPagamento.value
+
+        if (pagamento == "dinheiro" || pagamento == "Cartão de débito") {
+            exibicao.innerHTML = `<p>Você terá que pagar a vista</p>`
+        } else {
+            exibicao.innerHTML = `<p>Pagamento poderá ser parcelado</p>`
+        }
+        
+    }
+</script>

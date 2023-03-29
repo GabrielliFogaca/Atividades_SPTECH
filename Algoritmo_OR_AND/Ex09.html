@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>LOJAS AMERICANAS</h1>
+    Qual a marca desejada? <br> Disponíveis: Samsung, LG e Britânia.<input id="marca"><br>
+    Qual o valor ? <input type="text" id="valor">
+    <button onclick="analise()">Analisar Compra</button>
+
+    <div id="exibicao"></div>
+</body>
+
+</html>
+<script>
+
+    function analise() {
+        var tv = marca.value
+        var preco = Number(valor.value)
+
+        if (preco < 800 || preco > 2000) {
+            exibicao.innerHTML = (`<p>TV fora da faixa de preço</p>`)
+            if (preco < 800) {
+                exibicao.innerHTML += (`<p>Preço baixo demais!</p>`)
+            } if (preco > 2000) {
+                exibicao.innerHTML += (`<p>TV cara demais, infelizmente</p>`)
+            }
+        } else if (tv == "Mondial" || tv == "Britânia") {
+            exibicao.innerHTML = (`<p>Na faixa de preço, porém marca não confiável</p>`)
+        } else {
+            exibicao.innerHTML = (`<p>Essa TV pode entrar na sua lista!</p>`)
+        }
+
+    }
+</script>

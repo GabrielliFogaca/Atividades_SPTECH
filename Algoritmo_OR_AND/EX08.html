@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Empresa preferida</h1>
+    Nome da empresa: <input id="nomeEmpresa"><br>
+    Valor bolsa-Auxílio: <input type="text" id="valorBolsa"><br>
+    Valor VR (por dia): <input id="valorVr"><br>
+    Tempo de deslocamento (em minutos): <input id="deslocamento"><br>
+
+    <button onclick="analise()">É Preferida?</button>
+
+    <div id="exibicao"></div>
+</body>
+</html>
+<script>
+
+    function analise() {
+        var empresa = nomeEmpresa.value
+        var bolsa = valorBolsa.value
+        var vr = valorVr.value
+        var tempo = deslocamento.value
+
+        if (bolsa >= 1800 || vr >= 20 || tempo <= 30) {
+            exibicao.innerHTML = (`A empresa ${empresa} é uma de suas preferências`)
+        } else {
+            exibicao.innerHTML = (`A empresa ${empresa} está fora da sua lista`)
+        }
+        
+    }
+</script>

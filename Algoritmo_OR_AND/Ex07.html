@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculadora de cansaço <i>aprimorada</i> do aluno <i>SPTech</i>. </h1>
+    <h4>Meio de transporte.</h4>
+
+    Insira seu princial meio de transporte. <br> (Ônibus, Metrô, Carro, Bicicleta) <br>
+    <input id="transporte"><br><br>
+
+    Distância da faculdade (KM) <input type="text" id="distancia"> <br>
+    <button onclick="analise()">Calcular cansaço</button>
+
+    <div id="exibicao"></div>
+</body>
+
+</html>
+<script>
+
+    function analise() {
+        var trans = transporte.value
+        var km = Number(distancia.value)
+
+
+        if (km <= 10) {
+            if (trans == "Carro" || trans == "Metrô" || trans == "Ônibus") {
+                exibicao.innerHTML = (`<p>Tá tranks ...</p>`)
+            } else {
+                exibicao.innerHTML = (`<p>É ... um pouco cansado ...</p>`)
+            }
+        }
+
+        if (km > 10) {  
+            if (trans == "Carro") {
+                exibicao.innerHTML = (`<p>É ... um pouco cansado ...</p>`)
+            }
+            if (trans == "Metrô" || trans == "Ônibus") {
+                exibicao.innerHTML = (`<p>Bem cansado..</p>`)
+            } if (trans == "Bicicleta") {
+                exibicao.innerHTML = (`<p>Vish ... tá só o pó ...</p>`)
+            }
+        }
+    }
+
+</script>

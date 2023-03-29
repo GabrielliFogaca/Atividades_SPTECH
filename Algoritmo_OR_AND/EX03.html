@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AUXÍLIO EMERGENCIAL</h1>
+    QUAL SUA RENDA INDIVIDUAL: <input id="rendaIndividual"><br>
+    QUAL SUA RENDA FAMILIA: <input id="rendaFamiliar"><br>
+
+    <button onclick="analise()">Terei o benefício?</button>
+
+    <div id="exibicao"></div>
+</body>
+</html>
+<script>
+
+    function analise() {
+        var individual = Number(rendaIndividual.value)
+        var familiar = Number(rendaFamiliar.value)
+
+        if (individual <= 2000 || familiar <= 3000) {
+            alert(`Você terá direito ao auxílio`) 
+        } else {
+            alert(`Sem direito ao auxílio`)
+        }
+        
+    }
+</script>
