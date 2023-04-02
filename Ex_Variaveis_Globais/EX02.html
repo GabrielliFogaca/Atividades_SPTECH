@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+
+    <h1>Organização financeira</h1>
+
+    Salário: <input type="text" id="salario_usuario">
+    <button onclick="atual()">Confirmar Salário</button> <br><br><br>
+    <button onclick="contaCem()">Pagar conta de R$100,00</button>
+    <button onclick="contaQuin()">Pagar conta de R$500,00</button>
+    <button onclick="loteria()">Ganhar 2000 na loteria</button>
+
+    <div id="exibir"></div>
+
+</body>
+</html>
+
+<script>
+    var salario;
+
+    function atual() {
+        salario = salario_usuario.value
+        exibir.innerHTML = (`<p>Grana atual: $${salario}</p>`);
+    }
+
+    function contaCem() {
+        salario = salario - 100;
+        exibir.innerHTML = (`<p>Grana atual: $${salario}</p>`);
+
+    }
+
+    function contaQuin() {
+        salario = salario - 500;
+        exibir.innerHTML = (`<p>Grana atual: $${salario - 500}</p>`);
+
+    }
+
+    function loteria() {
+        salario = salario + 2000;
+
+        exibir.innerHTML = (`<p>Grana atual: $${salario + 2000}</p>`);
+
+    }
+</script>
