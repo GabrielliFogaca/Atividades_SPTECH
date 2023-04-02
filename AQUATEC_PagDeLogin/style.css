@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,900&display=swap');
+
+@font-face {
+    font-family: 'padrao';
+    src: url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,900&display=swap');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'padrao', barlow;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+
+.header {
+    border-bottom: 2px #32B9CD solid;
+    
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+.header a {
+    text-decoration: none;
+    color: #e3b862;
+}
+
+.menu {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.titulo {
+    color: #32b9cd;
+    width: fit-content;
+    font-weight: 500;
+}
+
+.atual {
+    font-weight: 1000;
+}
+
+.banner {
+    height: fit-content;
+    padding: 100px 0px 00px 00px ;
+    background-image: url(/Img/bg-jelly-fish-para_outras_pags.png);
+    background-size: cover;
+    font-size: 20px;
+}
+
+.area {
+    
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    
+    width: 300px;
+    padding: 0px 10px 27px 50px;
+    background-color: white;
+    color: #E6005A;
+    align-items: center;
+    
+}
+
+.area p {
+    position: relative;
+    margin: 20px auto 40px 70px;
+    font-size: 25px;
+    font-weight: 800;
+}   
+
+.banner .botao {
+    width: auto;
+    display: flex;
+    margin: 5px 20px 5px 80px;
+    padding: 10px 10px;
+    background-color: #E6005A;
+    color: white;
+}
+
+.rodape {
+    color: white;
+    background-color: #32B9CD;
+    align-items: center;
+    margin-top: 50px;
+    padding: 50px auto 40x auto;
+    
+}
+
+.par1 {
+    margin: 5px 20px 5px 80px;
+padding-top: 4%;
+
+}
+
+.par2 {
+    padding-bottom: 4%;
+}
+
+.rodape p {
+    text-align: center;
+}
