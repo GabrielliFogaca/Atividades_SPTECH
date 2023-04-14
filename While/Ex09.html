@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira um número: <br>
+    <input type="text" id="input_numero"><br>
+
+    Insira uma frase: <br>
+    <input type="text" id="frase"><br><br>  
+
+    <button onclick="exibicao()">Papagaio</button>
+    <div id="exibir">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    function exibicao() {
+        var nmr = Number(input_numero.value)
+        var contador = 0;
+        exibir.innerHTML = "";
+        
+        while (contador <= nmr) {
+            exibir.innerHTML += `<p> ${frase.value} </p>`
+            contador++;
+        }
+    `<p>Final de repetição. </p>`
+
+    }
+</script>

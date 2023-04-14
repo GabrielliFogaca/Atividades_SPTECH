@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um numero (Entre 0 e 200) <br>
+    <input type="text" id="inserir_nm"><br>
+    <button onclick="exibicao()">Viva o 7</button>
+    <div id="exibir">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    function exibicao() {
+        var inserido = Number(inserir_nm.value);
+        var contador = 0;
+        exibir.innerHTML = "";
+
+        if (inserido >= 0 && inserido <= 200) {
+            while (contador <= inserido) {
+                if (contador % 7 == 0) {
+                    exibir.innerHTML += `<p>${contador}</p>`
+                }
+                contador++;
+            }
+        } else {
+            exibir.innerHTML += `<p>Número incorreto.</p>`
+        }
+
+
+    }
+</script>

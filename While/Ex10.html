@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um intervalo (crescente) de valores: <br>
+    Valor 1: 
+    <input type="text" id="input_valor1">
+    Valor 2: <input type="text" id="input_valor2"><br><br>
+    <button onclick="exibicao()">S2 Pares</button>
+    <div id="exibir">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    function exibicao() {
+        var valor1 = Number(input_valor1.value);
+        var valor2 = Number(input_valor2.value);
+        exibir.innerHTML = "";
+
+
+        while (valor1 <= valor2) {
+            if ( valor1 % 2 == 0) {
+                exibir.innerHTML += `<p>${valor1}</p>`
+            }
+            valor1++;
+
+        }
+    }
+</script>
