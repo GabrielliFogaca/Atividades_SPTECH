@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    Cadastre os bairro onde já morou: <br>
+    <input type="text" id="inpt_bairros"><br>
+    <button onclick="cadastrar()">Cadastrar bairro</button> <br><br><br>
+
+    Escolha um numero: <br> 
+    <input type="text" id="inpt_numero"><br>
+    <button onclick="relembrar()">Relembrar moradia</button><br>
+    
+    <div id="exibir">
+
+    </div>
+</body>
+</html>
+
+<script>
+    var bairros = [];
+    var numero = "";
+
+    function cadastrar() {
+        exibir.innerHTML = "";
+        inpt_bairros = inpt_bairros.value;
+
+        bairros.push(inpt_bairros);
+        exibir.innerHTML += "Bairro adicionado";
+    }
+
+    function relembrar() {
+        exibir.innerHTML = "";
+        var numero = Number(inpt_numero.value)
+
+        if(numeros > bairros.length) {
+            exibir.innerHTML += `Vocẽ ainda não morou no ${numero}º bairro. `
+        } else {
+            exibir.innerHTML += `${bairros[numero-1]}`
+        }
+    }
+
+</script>
