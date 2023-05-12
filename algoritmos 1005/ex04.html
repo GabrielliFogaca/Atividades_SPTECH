@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+<body>
+    Informe seus filmes favoritos em ordem crescente. (Sendo do que mais gosta para o que menos gosta) <br>
+    <input type="text" id="inp_filme">
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <button onclick="listar()">Ver favoritos</button>
+
+    <div id="exibir">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    
+    var listaFilmes = [];
+    var filme = "";
+
+    function cadastrar() {
+        exibir.innerHTML = "Filme cadastrado com sucesso."     
+        var filme = inp_filme.value;
+
+        listaFilmes.push(filme);   
+    }
+
+    function listar() {
+
+        for (i = 0; i < listaFilmes.length; i++) {
+
+            exibir.innerHTML = `
+            <p>Filmes favoritos: ${listaFilmes}</p>
+            Total: ${i +1} <br>
+            <p>O QUE MAIS GOSTA É ${listaFilmes[0]}</p>
+            <p>O QUE MENOS GOSTA É ${listaFilmes[listaFilmes.length -1]}</p>
+            `
+        }
+
+
+    }
+</script>
