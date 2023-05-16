@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,8 +26,8 @@
     var numero = "";
 
     function cadastrar() {
-        exibir.innerHTML = "";
-        var bairroCadastrado = inpt_inpt_bairros.value;
+        exibir.innerHTML = "<p>Bairro cadastrado com sucesso</p>";
+        var bairroCadastrado = inpt_bairros.value;
 
         bairros.push(bairroCadastrado);        
     }
@@ -35,10 +35,13 @@
     function relembrar() {
         var numero = Number(inpt_numero.value);
 
+        if (numero <= bairros.length) {
         for (i = 0; i < bairros.length; i++) {
-            exibir.innerHTML 
+            exibir.innerHTML = (`<p>${bairros[numero -1]}</p>`)
         }
-
+    } else {
+        exibir.innerHTML += (`<p>Você ainda não morou num ${numero}º bairro!</p>`)
+    }
     }
 
 </script>
