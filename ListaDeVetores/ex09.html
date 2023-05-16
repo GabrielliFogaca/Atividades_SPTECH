@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Insira o nome dos seus projetos: <br />
+    <input type="text" id="inpt_projetos" /> <br />
+    <button onclick="registrar()">Registrar projeto</button>
+
+    <div id="exibir"></div>
+  </body>
+</html>
+
+<script>
+       var lista_projetos = [];
+    var projeto = "";
+
+    function registrar() {
+      var projeto = inpt_projetos.value;
+      exibir.innerHTML = "";
+
+      lista_projetos.push(projeto);
+
+      for (var i = 0; i < lista_projetos.length; i++) {
+        exibir.innerHTML = "";
+
+          if (lista_projetos.length < 5) {
+        exibir.innerHTML += `Você já fez ${i+1} projetos. Por isso você é um profissional Júnior `;
+      } else if (lista_projetos.length < 13) {
+          exibir.innerHTML += `Você já fez ${i+1} projetos. Pleno desde o projeto ${lista_projetos[4]} `;
+      } else {
+        exibir.innerHTML += `Você já fez ${i+1} projetos. Sênior desde o projeto ${lista_projetos[12]} `;
+      }
+  }
+}
+</script>

@@ -22,11 +22,13 @@
 
   function cadastrar() {
     var inpt_filmes = filmes_favoritos.value;
+    filmes.innerHTML = "";
 
     lista_filmes.push(inpt_filmes);
 
     for (var i = 0; i < lista_filmes.length; i++) {
-      filmes.innerHTML = `${lista_filmes}`;
+      filmes.innerHTML += `${lista_filmes[i]}<br>`;
     }
   }
+
 </script>
