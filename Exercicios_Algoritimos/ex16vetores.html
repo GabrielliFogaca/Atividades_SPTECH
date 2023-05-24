@@ -1,0 +1,79 @@
+<!-- 16 (clássico). Crie um programa o qual: 
+
+a) Tenha um campo "Digite um número qualquer". 
+
+b) Tenha um botão "Analisar histórico". Ao clicar nele, o número é cadastrado em algum lugar e, em seguida, 
+deve aparecer um histórico dos números cadastrados, bem como o maior e o menor, como no exemplo a seguir: 
+
+      1º Número: 15 
+
+      2º Número: 22 
+
+      3º Número: 19 
+
+      4º Número: 5 
+
+ 
+
+      Maior: 22 
+
+      Menor: 5 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX16</title>
+</head>
+<body>
+
+    Digite um número qualquer: <input id="ipt_numqualquer" type="number"> <br>
+    <button onclick="Analisar()">Analisar histórico</button> <br>
+
+    <div id="exibir_lista"></div>
+    <div id="exibir_maiormenor"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var listanumeros = [];
+
+    function Analisar() {
+        var num = Number(ipt_numqualquer.value)
+
+        listanumeros.push(num)
+
+        exibir_lista.innerHTML = ``
+        exibir_maiormenor.innerHTML = ``
+
+        var maior_num = listanumeros[0]
+        var menor_num = listanumeros[0]
+
+        for (var i = 0; i < listanumeros.length; i++) {
+            var numatual = listanumeros[i];
+
+            if(numatual > maior_num) {
+                maior_num = numatual
+            }
+
+
+            if (numatual < menor_num) {
+                menor_num = numatual
+            }
+
+            exibir_lista.innerHTML += `${i +1}º - Número: ${listanumeros[i]} <br>`
+
+        }
+
+
+
+        exibir_maiormenor.innerHTML = "O maior número é: " + maior_num;
+        exibir_maiormenor.innerHTML += " <br> O menor número é: " + menor_num;
+        
+    }
+    
+</script>

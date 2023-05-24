@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sete e Meio - Game</title>
+    <link rel="stylesheet" href="setemeio.css ">
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5415/5415110.png" type="image/x-icon">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Sete e Meio</h1>
+    </div>
+    <div class="index_sete">
+        <div class="buttons" id="buttons">
+            <button class="botao_jogo" onclick="comecar()">Jogar</button>
+        </div>
+        <div class="text_cartas" id="text_cartas">
+        </div>
+        <br>
+        <div class="texts">
+            <div class="pontos" id="div_pontos">
+            </div>
+            <br>
+            <div class="mesa" id="div_pontosMesa">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var baralho = [
+        "As (Copas)",
+        "2 (Copas)",
+        "3 (Copas)",
+        "4 (Copas)",
+        "5 (Copas)",
+        "6 (Copas)",
+        "7 (Copas)",
+        "Valete (Copas)",
+        "Rainha (Copas)",
+        "Rei (Copas)",
+        "As (Paus)",
+        "2 (Paus)",
+        "3 (Paus)",
+        "4 (Paus)",
+        "5 (Paus)",
+        "6 (Paus)",
+        "7 (Paus)",
+        "Valete (Paus)",
+        "Rainha (Paus)",
+        "Rei (Paus)",
+        "As (Espadas)",
+        "2 (Espadas)",
+        "3 (Espadas)",
+        "4 (Espadas)",
+        "5 (Espadas)",
+        "6 (Espadas)",
+        "7 (Espadas)",
+        "Valete (Espadas)",
+        "Rainha (Espadas)",
+        "Rei (Espadas)",
+        "As (Ouros)",
+        "2 (Ouros)",
+        "3 (Ouros)",
+        "4 (Ouros)",
+        "5 (Ouros)",
+        "6 (Ouros)",
+        "7 (Ouros)",
+        "Valete (Ouros)",
+        "Rainha (Ouros)",
+        "Rei (Ouros)"
+    ]
+    
+    var pontos = 0
+    var mesaPontos = 0
+    var cartaRandom = baralho[parseInt(Math.random() * tamanhoBaralho)]
+    var tamanhoBaralho = baralho.length
+
+    function comecar() {
+        tamanhoBaralho = baralho.length - 1
+        cartaRandom = baralho[parseInt(Math.random() * tamanhoBaralho)]
+        baralho.splice(cartaRandom, 1)
+        var adicionar = 0
+        buttons.innerHTML = `<button class="botao_jogo" onclick="pedir()">Comprar mais uma</button>`
+        buttons.innerHTML += `<button class="botao_jogo" onclick="passar()">Passar</button>`
+        text_cartas.innerHTML = `${cartaRandom}`
+        if (cartaRandom == "As (Copas)" || cartaRandom == "As (Paus)" || cartaRandom == "As (Espadas)" || cartaRandom == "As (Ouros)") {
+            adicionar = 1
+        } else if (cartaRandom == "2 (Copas)" || cartaRandom == "2 (Paus)" || cartaRandom == "2 (Espadas)" || cartaRandom == "2 (Ouros)") {
+            adicionar = 2
+        } else if (cartaRandom == "3 (Copas)" || cartaRandom == "3 (Paus)" || cartaRandom == "3 (Espadas)" || cartaRandom == "3 (Ouros)") {
+            adicionar = 3
+        } else if (cartaRandom == "4 (Copas)" || cartaRandom == "4 (Paus)" || cartaRandom == "4 (Espadas)" || cartaRandom == "4 (Ouros)") {
+            adicionar = 4
+        } else if (cartaRandom == "5 (Copas)" || cartaRandom == "5 (Paus)" || cartaRandom == "5 (Espadas)" || cartaRandom == "5 (Ouros)") {
+            adicionar = 5
+        } else if (cartaRandom == "6 (Copas)" || cartaRandom == "6 (Paus)" || cartaRandom == "6 (Espadas)" || cartaRandom == "6 (Ouros)") {
+            adicionar = 6
+        } else if (cartaRandom == "7 (Copas)" || cartaRandom == "7 (Paus)" || cartaRandom == "7 (Espadas)" || cartaRandom == "7 (Ouros)") {
+            adicionar = 7
+        } else if (cartaRandom == "Valete (Copas)" || cartaRandom == "Valete (Paus)" || cartaRandom == "Valete (Espadas)" || cartaRandom == "Valete (Ouros)") {
+            adicionar = 0.5
+        } else if (cartaRandom == "Rainha (Copas)" || cartaRandom == "Rainha (Paus)" || cartaRandom == "Rainha (Espadas)" || cartaRandom == "Rainha (Ouros)") {
+            adicionar = 0.5
+        } else if (cartaRandom == "Rei (Copas)" || cartaRandom == "Rei (Paus)" || cartaRandom == "Rei (Espadas)" || cartaRandom == "Rei (Ouros)") {
+            adicionar = 0.5
+        }
+        pontos = pontos + adicionar
+        div_pontos.innerHTML = `Player: ${cartaRandom} - ${pontos} pontos`
+        div_pontosMesa.innerHTML = `Banca: ${mesaPontos} pontos`
+    }
+
+    function pedir() {
+        if (pontos < 7.5) {
+            tamanhoBaralho = baralho.length - 1
+            cartaRandom = baralho[parseInt(Math.random() * tamanhoBaralho)]
+            baralho.splice(cartaRandom, 1)
+            var adicionar = 0
+            text_cartas.innerHTML = `${cartaRandom}`
+            if (cartaRandom == "As (Copas)" || cartaRandom == "As (Paus)" || cartaRandom == "As (Espadas)" || cartaRandom == "As (Ouros)") {
+                adicionar = 1
+            } else if (cartaRandom == "2 (Copas)" || cartaRandom == "2 (Paus)" || cartaRandom == "2 (Espadas)" || cartaRandom == "2 (Ouros)") {
+                adicionar = 2
+            } else if (cartaRandom == "3 (Copas)" || cartaRandom == "3 (Paus)" || cartaRandom == "3 (Espadas)" || cartaRandom == "3 (Ouros)") {
+                adicionar = 3
+            } else if (cartaRandom == "4 (Copas)" || cartaRandom == "4 (Paus)" || cartaRandom == "4 (Espadas)" || cartaRandom == "4 (Ouros)") {
+                adicionar = 4
+            } else if (cartaRandom == "5 (Copas)" || cartaRandom == "5 (Paus)" || cartaRandom == "5 (Espadas)" || cartaRandom == "5 (Ouros)") {
+                adicionar = 5
+            } else if (cartaRandom == "6 (Copas)" || cartaRandom == "6 (Paus)" || cartaRandom == "6 (Espadas)" || cartaRandom == "6 (Ouros)") {
+                adicionar = 6
+            } else if (cartaRandom == "7 (Copas)" || cartaRandom == "7 (Paus)" || cartaRandom == "7 (Espadas)" || cartaRandom == "7 (Ouros)") {
+                adicionar = 7
+            } else if (cartaRandom == "Valete (Copas)" || cartaRandom == "Valete (Paus)" || cartaRandom == "Valete (Espadas)" || cartaRandom == "Valete (Ouros)") {
+                adicionar = 0.5
+            } else if (cartaRandom == "Rainha (Copas)" || cartaRandom == "Rainha (Paus)" || cartaRandom == "Rainha (Espadas)" || cartaRandom == "Rainha (Ouros)") {
+                adicionar = 0.5
+            } else if (cartaRandom == "Rei (Copas)" || cartaRandom == "Rei (Paus)" || cartaRandom == "Rei (Espadas)" || cartaRandom == "Rei (Ouros)") {
+                adicionar = 0.5
+            }
+            pontos = pontos + adicionar
+            div_pontos.innerHTML += `<br>${cartaRandom} - ${pontos} pontos`
+            if (pontos > 7.5) {
+                div_pontos.innerHTML += ` - O JOGADOR ESTOUROU! A banca venceu com ${mesaPontos} pontos`
+                buttons.innerHTML = `<button class="botao_jogo" onclick="JogarDeNovo()">Jogar de novo</button>`
+            } else if (pontos == 7.5) {
+                div_pontos.innerHTML += ` - SETE E MEIO! O jogador venceu com 7.5 pontos!`
+                buttons.innerHTML = `<button class="botao_jogo" onclick="JogarDeNovo()">Jogar de novo</button>`
+            }
+        }
+        
+    }
+
+    function passar() {
+        for (; mesaPontos <= pontos; passar()) {
+            if (mesaPontos < 7.5) {
+                tamanhoBaralho = baralho.length - 1
+                cartaRandom = baralho[parseInt(Math.random() * tamanhoBaralho)]
+                baralho.splice(cartaRandom, 1)
+                var adicionar = 0
+                text_cartas.innerHTML = `${cartaRandom}`
+                if (cartaRandom == "As (Copas)" || cartaRandom == "As (Paus)" || cartaRandom == "As (Espadas)" || cartaRandom == "As (Ouros)") {
+                    adicionar = 1
+                } else if (cartaRandom == "2 (Copas)" || cartaRandom == "2 (Paus)" || cartaRandom == "2 (Espadas)" || cartaRandom == "2 (Ouros)") {
+                    adicionar = 2
+                } else if (cartaRandom == "3 (Copas)" || cartaRandom == "3 (Paus)" || cartaRandom == "3 (Espadas)" || cartaRandom == "3 (Ouros)") {
+                    adicionar = 3
+                } else if (cartaRandom == "4 (Copas)" || cartaRandom == "4 (Paus)" || cartaRandom == "4 (Espadas)" || cartaRandom == "4 (Ouros)") {
+                    adicionar = 4
+                } else if (cartaRandom == "5 (Copas)" || cartaRandom == "5 (Paus)" || cartaRandom == "5 (Espadas)" || cartaRandom == "5 (Ouros)") {
+                    adicionar = 5
+                } else if (cartaRandom == "6 (Copas)" || cartaRandom == "6 (Paus)" || cartaRandom == "6 (Espadas)" || cartaRandom == "6 (Ouros)") {
+                    adicionar = 6
+                } else if (cartaRandom == "7 (Copas)" || cartaRandom == "7 (Paus)" || cartaRandom == "7 (Espadas)" || cartaRandom == "7 (Ouros)") {
+                    adicionar = 7
+                } else if (cartaRandom == "Valete (Copas)" || cartaRandom == "Valete (Paus)" || cartaRandom == "Valete (Espadas)" || cartaRandom == "Valete (Ouros)") {
+                    adicionar = 0.5
+                } else if (cartaRandom == "Rainha (Copas)" || cartaRandom == "Rainha (Paus)" || cartaRandom == "Rainha (Espadas)" || cartaRandom == "Rainha (Ouros)") {
+                    adicionar = 0.5
+                } else if (cartaRandom == "Rei (Copas)" || cartaRandom == "Rei (Paus)" || cartaRandom == "Rei (Espadas)" || cartaRandom == "Rei (Ouros)") {
+                    adicionar = 0.5
+                }
+                mesaPontos = mesaPontos + adicionar
+                
+                
+                div_pontosMesa.innerHTML += `<br>${cartaRandom} -  ${mesaPontos} pontos`
+                if (mesaPontos > 7.5) {
+                    div_pontosMesa.innerHTML += ` - A BANCA ESTOUROU! O jogador venceu com ${pontos} pontos!`
+                    buttons.innerHTML = `<button class="botao_jogo" onclick="JogarDeNovo()">Jogar de novo</button>`
+                } else if (mesaPontos == 7.5) {
+                    div_pontosMesa.innerHTML += ` - SETE E MEIO! A banca venceu com 7.5 pontos!`
+                    buttons.innerHTML = `<button class="botao_jogo" onclick="JogarDeNovo()">Jogar de novo</button>`
+                } else if (mesaPontos > pontos && mesaPontos <= 7.5) {
+                div_pontosMesa.innerHTML += ` - A banca venceu com ${mesaPontos} pontos!`
+                buttons.innerHTML = `<button class="botao_jogo" onclick="JogarDeNovo()">Jogar de novo</button>`
+                } 
+            }
+        }
+    }
+
+    function JogarDeNovo() {
+        tamanhoBaralho = baralho.length - 1
+        cartaRandom = baralho[parseInt(Math.random() * tamanhoBaralho)]
+        baralho.splice(cartaRandom, 1)
+        var adicionar = 0
+        pontos = 0
+        mesaPontos = 0
+        buttons.innerHTML = `<button class="botao_jogo" onclick="pedir()">Comprar mais uma</button>`
+        buttons.innerHTML += `<button class="botao_jogo" onclick="passar()">Passar</button>`
+        text_cartas.innerHTML = `${cartaRandom}`
+        if (cartaRandom == "As (Copas)" || cartaRandom == "As (Paus)" || cartaRandom == "As (Espadas)" || cartaRandom == "As (Ouros)") {
+            adicionar = 1
+        } else if (cartaRandom == "2 (Copas)" || cartaRandom == "2 (Paus)" || cartaRandom == "2 (Espadas)" || cartaRandom == "2 (Ouros)") {
+            adicionar = 2
+        } else if (cartaRandom == "3 (Copas)" || cartaRandom == "3 (Paus)" || cartaRandom == "3 (Espadas)" || cartaRandom == "3 (Ouros)") {
+            adicionar = 3
+        } else if (cartaRandom == "4 (Copas)" || cartaRandom == "4 (Paus)" || cartaRandom == "4 (Espadas)" || cartaRandom == "4 (Ouros)") {
+            adicionar = 4
+        } else if (cartaRandom == "5 (Copas)" || cartaRandom == "5 (Paus)" || cartaRandom == "5 (Espadas)" || cartaRandom == "5 (Ouros)") {
+            adicionar = 5
+        } else if (cartaRandom == "6 (Copas)" || cartaRandom == "6 (Paus)" || cartaRandom == "6 (Espadas)" || cartaRandom == "6 (Ouros)") {
+            adicionar = 6
+        } else if (cartaRandom == "7 (Copas)" || cartaRandom == "7 (Paus)" || cartaRandom == "7 (Espadas)" || cartaRandom == "7 (Ouros)") {
+            adicionar = 7
+        } else if (cartaRandom == "Valete (Copas)" || cartaRandom == "Valete (Paus)" || cartaRandom == "Valete (Espadas)" || cartaRandom == "Valete (Ouros)") {
+            adicionar = 0.5
+        } else if (cartaRandom == "Rainha (Copas)" || cartaRandom == "Rainha (Paus)" || cartaRandom == "Rainha (Espadas)" || cartaRandom == "Rainha (Ouros)") {
+            adicionar = 0.5
+        } else if (cartaRandom == "Rei (Copas)" || cartaRandom == "Rei (Paus)" || cartaRandom == "Rei (Espadas)" || cartaRandom == "Rei (Ouros)") {
+            adicionar = 0.5
+        }
+        pontos = pontos + adicionar
+        div_pontos.innerHTML = `Jogador: ${cartaRandom} - ${pontos} pontos`
+        div_pontosMesa.innerHTML = `Banca: ${mesaPontos} pontos`
+
+        baralho = [
+        "As (Copas)",
+        "2 (Copas)",
+        "3 (Copas)",
+        "4 (Copas)",
+        "5 (Copas)",
+        "6 (Copas)",
+        "7 (Copas)",
+        "Valete (Copas)",
+        "Rainha (Copas)",
+        "Rei (Copas)",
+        "As (Paus)",
+        "2 (Paus)",
+        "3 (Paus)",
+        "4 (Paus)",
+        "5 (Paus)",
+        "6 (Paus)",
+        "7 (Paus)",
+        "Valete (Paus)",
+        "Rainha (Paus)",
+        "Rei (Paus)",
+        "As (Espadas)",
+        "2 (Espadas)",
+        "3 (Espadas)",
+        "4 (Espadas)",
+        "5 (Espadas)",
+        "6 (Espadas)",
+        "7 (Espadas)",
+        "Valete (Espadas)",
+        "Rainha (Espadas)",
+        "Rei (Espadas)",
+        "As (Ouros)",
+        "2 (Ouros)",
+        "3 (Ouros)",
+        "4 (Ouros)",
+        "5 (Ouros)",
+        "6 (Ouros)",
+        "7 (Ouros)",
+        "Valete (Ouros)",
+        "Rainha (Ouros)",
+        "Rei (Ouros)"
+    ]
+}
+
+</script>
