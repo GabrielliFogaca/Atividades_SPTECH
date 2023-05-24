@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Destino viagem: <input type="text" id="destinoViagem" /><br />
+    <button onclick="adicionar()">Adicionar</button>
+    <br /><button onclick="primeiraViagem()">Primeira viagem</button
+    ><button onclick="terceiraViagem()">Segunda viagem</button
+    ><button onclick="ultimaViagem()">Última viagem</button>
+
+    <div id="exibir"></div>
+  </body>
+</html>
+<script>
+  listaViagem = [];
+
+  function adicionar() {
+    exibir.innerHTML = "";
+    var viagem = destinoViagem.value;
+    listaViagem.push(viagem);
+    exibir.innerHTML += `Viagem adicionada`;
+  }
+
+  function primeiraViagem() {
+    exibir.innerHTML = "";
+
+    if (listaViagem.length > 0) {
+        exibir.innerHTML += `${listaViagem[0]}`
+    } else {
+        exibir.innerHTML += `Ainda não viajou`
+    }
+  }
+
+  function terceiraViagem() {
+    exibir.innerHTML = "";
+
+    if (listaViagem.length > 1) {
+        exibir.innerHTML += `${listaViagem[2]}`
+    } else {
+        exibir.innerHTML += `Ainda não fez a 3ª viagem`
+    }
+  }
+
+  function ultimaViagem() {
+    exibir.innerHTML = "";
+
+    if (listaViagem.length == 0){
+        exibir.innerHTML += `Ainda não viajou`;
+    } else {
+        exibir.innerHTML += `${listaViagem[listaViagem.length -1]}`
+    }
+  }
+</script>

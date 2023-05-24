@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o nome do guerreiro? <input type="text" id="nomeGuerreiro">
+    Qual o KI normal? <input type="text" id="kinormal"><br>
+    <button onclick="dragonball()">Ver ki em cada forma</button>
+
+</body>
+</html>
+<script>
+    function dragonball() {
+        var ki = Number(kinormal.value);
+        var kiSuperSayajin = ki * 50;
+        var kiSuperSayajin2 = ki * 100;
+
+        alert(`O KI do guerreiro ${nomeGuerreiro.value} como Super Sayajin é de ${kiSuperSayajin}`);
+        alert(`O KI do guerreiro ${nomeGuerreiro.value} como Super Sayajin 2 é de ${kiSuperSayajin2}`);
+
+    }
+</script>

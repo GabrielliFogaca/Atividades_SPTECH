@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual o valor da passagem? <input type="text" id="valorPassagem"><br>
+    Quantas viagens por mês <input type="text" id="viagensMes"><br>
+    <button onclick="economia()">Ver economia</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+
+    function economia() {
+        var econ = Number(valorPassagem.value) * Number(viagensMes.value);
+
+        exibir.innerHTML += `Você economizará ${econ / 2} por mês`;
+    }
+</script>

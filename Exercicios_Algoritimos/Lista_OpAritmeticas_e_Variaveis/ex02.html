@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Equipe Lantra</h1>
+
+    Qual o valor da pizza? <input type="text" id="valor_pizza"><br>
+    Quantas pessoas vão dividir? <input type="text" id="pessoas"> <br>
+    <button onclick="pizza()">#ILOVEPIZZA</button>
+
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+
+    function pizza() {
+
+        var divisao = Number(valor_pizza.value) / Number(pessoas.value);
+
+        exibir.innerHTML += `Cada um dos ${pessoas.value} vai pagar R$${divisao}`
+    }
+</script>

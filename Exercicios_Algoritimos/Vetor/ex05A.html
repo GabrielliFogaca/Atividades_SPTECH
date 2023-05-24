@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="jogar()">Jogar</button>
+    <div id="exibir"></div>
+  </body>
+</html>
+<script>
+  var lista = ["Pedra", "Papel", "Tesoura"];
+
+  function jogar() {
+    var jogador1 = parseInt(Math.random() * 3);
+    var jogador2 = parseInt(Math.random() * 3);
+
+    exibir.innerHTML = "";
+
+    if (lista[jogador1] == "Pedra" && lista[jogador2] == "Pedra") {
+      exibir.innerHTML += `EMPATE! Jogue novamente!`;
+    } else if (lista[jogador1] == "Pedra" && lista[jogador2] == "Papel") {
+      exibir.innerHTML += `Jogador 2 venceu porque papel vence de pedra.`;
+    } else if (lista[jogador1] == "Pedra" && lista[jogador2] == "Tesoura") {
+      exibir.innerHTML += `Jogador 1 venceu porque pedra vence de tesoura.`;
+    } else if (lista[jogador1] == "Papel" && lista[jogador2] == "Papel") {
+      exibir.innerHTML += `Empate! Jogue novamente!`;
+    } else if (lista[jogador1] == "Papel" && lista[jogador2] == "Pedra") {
+      exibir.innerHTML += `Jogador 1 venceu porque papel vence de pedra.`;
+    } else if (lista[jogador1] == "Papel" && lista[jogador2] == "Tesoura") {
+      exibir.innerHTML += `Jogador 2 venceu porque tesoura vence de papel.`;
+    } else if (lista[jogador1] == "Tesoura" && lista[jogador2] == "Tesoura") {
+      exibir.innerHTML += `EMPATE! Jogue novamente!`;
+    } else if (lista[jogador1] == "Tesoura" && lista[jogador2] == "Papel") {
+      exibir.innerHTML += `Jogador 1 venceu porque tesoura vence de papel.`;
+    } else if (lista[jogador1] == "Tesoura" && lista[jogador2] == "Pedra") {
+      exibir.innerHTML += `Jogador 2 venceu porque papel vence de pedra.`;
+    }
+  }
+</script>

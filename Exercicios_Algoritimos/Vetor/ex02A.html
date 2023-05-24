@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    minimo: <input id="minimo"><br>
+    maximo: <input id="maximo"><br>
+    <button onclick="sorteio()">Sortear</button>
+    
+    <div id="exibir"></div>
+</body>
+</html>
+<script>
+    var listaNumerica = [1,12,25,88,100];
+    
+    
+    function sorteio() {
+        var max = Number(maximo.value);
+        var min = Number(minimo.value);
+        var intervalo = max - min;
+        var numeroSorteado = parseInt(Math.random() * intervalo) + min;
+
+            exibir.innerHTML = "";
+            exibir.innerHTML += `O numero sorteado foi ${numeroSorteado}<br>` 
+
+        if (listaNumerica.indexOf(numeroSorteado) > -1) {
+            exibir.innerHTML += `Parabéns ! O número ${numeroSorteado} está na posição ${listaNumerica.indexOf(numeroSorteado)} da nossa lista`
+        }
+    }   
+</script>
